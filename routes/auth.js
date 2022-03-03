@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = express.Router()
 const userSchema = require('../models/userModels')
+//SIGNUP
 //*****the form uses post methode to send request to the db server*** we use post methode because it contain a body when we will send the sensetive information that we wanted to anyone to see it in the url **for the information safety and security we uses methode POST***/
 //we uses the parameter req and res to storage the request that we will sennd it  and to storage the answer the respond send it by the server ***//
 auth.post('/signup', async(req,resp)=>{
@@ -20,7 +21,7 @@ auth.post('/signup', async(req,resp)=>{
         const salt=10
         const passwordbhashed=bcrypt.hashSync(password,salt)
         const userId={id:user._id}
-        var token = jwt.sign(userId,process.env.SECRET_OR_KEY)
+        const token = jwt.sign(userId,process.env.SECRET_OR_KEY)
         user.password = passwordbhashed
         //create the user in the data base
         await user.save()
@@ -29,5 +30,32 @@ auth.post('/signup', async(req,resp)=>{
         resp.status(400).send({message:'failed to add user'})
     }
 })
+//SIGNIN
+
+auth.post('/signin',async(req,resp)=>{
+    const{email,password}=req.body
+    try {
+        const find = await userSchema.findOne({email:email})
+        if (!find) {
+        resp.status(400).send({message:'bad credentials'})}
+        const match= await bcrypt.compare(password,find.password)
+        if(!match)
+        {resp.status(400).send({message:'bad credentials'})}
+        const userId = {id:find._id}
+        const token = jwt.sign(userId,process.env.SECRET_OR_KEY)
+        resp.status(200).send({message:'login successfully',token})
+    } catch (error) {
+        resp.status(400).send({message:'bad credentials'})
+ 
+    }
+})
+    
+
+
+
+
+
+
+
 
 module.exports=auth;
