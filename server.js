@@ -19,5 +19,5 @@ app.use('/',authRouter)
 
 app.listen(port,(err)=>{
     err? console.log(err):
-    console.log(` connected with success ${port}`)
+    console.log(`connected with success ${port}`)
 })
