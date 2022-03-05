@@ -16,10 +16,10 @@ exports.validationSignIn=[
 
 exports.isValid= async(req,resp,next) => {
     try {
-       const errors = validationResult(req)
+       const errors = validationResult(req.body)
        if(!errors.isEmpty())
        {
-           return resp.status(400).json({errors:errors.array() })};
+           return resp.status(400).json({errors:errors.array() })};   
        next();
     } catch (error) {
         resp.status(400).send({message:error}) 

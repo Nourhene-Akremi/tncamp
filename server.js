@@ -14,10 +14,5 @@ port=process.env.port
 //app.use() used to use a module
 app.use(express.json())
 app.use('/',authRouter)
-
-
-
-app.listen(port,(err)=>{
-    err? console.log(err):
-    console.log(`connected with success ${port}`)
+app.listen(port,(err)=>{err? console.log(err):console.log(`connected with success ${port}`)
 })
