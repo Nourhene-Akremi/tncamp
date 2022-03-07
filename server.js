@@ -5,6 +5,7 @@
 
 const express= require('express');
 const connectDb = require('./config/connectDb');
+const cors=require('cors');
 const app = express();
 const authRouter=require('./routes/auth');
 //to import the .env file we need to import the dotenv node.module(node_modules/dotenv/lib/main)and we need the config() to Loads the .env file contents into process.env. 
@@ -13,6 +14,7 @@ connectDb()
 port=process.env.port
 //app.use() used to use a module
 app.use(express.json())
+app.use(cors())
 app.use('/',authRouter)
 app.listen(port,(err)=>{err? console.log(err):console.log(`connected with success ${port}`)
 })
