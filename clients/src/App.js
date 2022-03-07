@@ -5,6 +5,7 @@ import MyNavBar from './commponents/navbar'
 import Profile from './commponents/profile'
 import Events from './commponents/events'
 import Login from './commponents/logIn'
+import Signup from './commponents/signup'
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
      <Switch>
        <Route exact path="/" component={Home}/>
        <Route path="/Login" component={Login}/>
+       <Route path="/Signup" component={Signup}/>
        <Route path="/Profile" component={Profile}/>
        <Route path="/Events" component={Events}/>
      </Switch>

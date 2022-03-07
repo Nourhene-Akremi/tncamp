@@ -13,7 +13,7 @@ exports.authSignup=async(req,resp)=>{
         //asynchronus programm is the one who ignore the first step because of the delay and dispatch the next one and that can cause many execution problems**//
         const find = await userSchema.findOne({email:email})
       if (find) {
-          resp.status(400).send({message:'user already exist'})}
+         return resp.status(500).send({message:'user already exist'})}
         const user= new userSchema(req.body)
         const salt=10
         const passwordbhashed=bcrypt.hashSync(password,salt)
@@ -24,7 +24,7 @@ exports.authSignup=async(req,resp)=>{
         await user.save()
         resp.status(200).send({message:'user added with success',token})
     } catch (error) {
-        resp.status(400).send({message:'failed to add user'})
+        resp.status(500).send({message:'failed to add user'})
     }
 }
 
@@ -33,7 +33,7 @@ exports.authSignin=async(req,resp)=>{
     try {
         const find = await userSchema.findOne({email:email})
         if (!find) {
-        resp.status(400).send({message:'bad credentials'})}
+       return resp.status(400).send({message:'bad credentials'})}
         const match= await bcrypt.compare(password,find.password)
         if(!match)
         {resp.status(400).send({message:'bad credentials'})}
