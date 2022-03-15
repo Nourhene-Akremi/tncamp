@@ -10,11 +10,12 @@ const app = express();
 const authRouter=require('./routes/auth');
 //to import the .env file we need to import the dotenv node.module(node_modules/dotenv/lib/main)and we need the config() to Loads the .env file contents into process.env. 
 require('dotenv').config()
-connectDb()
-port=process.env.port
-//app.use() used to use a module
 app.use(express.json())
 app.use(cors())
+connectDb()
+port=process.env.port||5000
+//app.use() used to use a module
+ 
 app.use('/',authRouter)
 app.listen(port,(err)=>{err? console.log(err):console.log(`connected with success ${port}`)
 })

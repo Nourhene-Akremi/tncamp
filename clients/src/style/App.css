@@ -1,0 +1,89 @@
+.myfooter-background {
+  position: relative;
+  bottom: 0;
+  height: 11rem;
+  width: 100%;
+  background: linear-gradient(60deg, #1cd11c, yellow);
+}
+
+.myfooter-background background:ur
+.myfooter {
+  margin-left: 1rem;
+  margin-top: .3rem;
+}
+
+.myfooter-background .icons-social-media {
+  padding-bottom: 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.myfooter-background .icons-social-media .BsFacebook {
+  font-size: 1rem;
+}
+
+.myfooter-background .contact {
+  font-family: a;
+  margin-bottom: 1rem;
+}
+
+.myfooter-background .Copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: .5rem;
+}
+
+.loginFORM {
+  border: .3rem inset green;
+  width: 24rem;
+  height: 15rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 2rem;
+  border-radius: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.loginFORM .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1rem;
+  margin-left: 3rem;
+}
+
+.loginFORM .login .email, .loginFORM .login .password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.loginFORM .login input {
+  margin-top: 1rem;
+  border-radius: 3rem;
+  width: 15rem;
+}
+/*# sourceMappingURL=App.css.map */

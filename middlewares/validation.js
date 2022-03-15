@@ -1,7 +1,6 @@
 const {body,validationResult}=require('express-validator')
 
 exports.validationSignUp=[
-    body("photo"),
     body("name","name can not be empty and at least contain five caracters").isEmpty().isLength({min:5}),
     body("email","please type a correct email").isEmpty().isEmail,
     body("password","password can not be empty and have to contain at least five character").isEmpty().isLength({min:5}).isAlphanumeric(),
@@ -10,13 +9,14 @@ exports.validationSignUp=[
 ]
 
 exports.validationSignIn=[
-    body("email","please type a correct email").isEmpty().isEmail,
-    body("password","password can not be empty and have to contain at least five character").isEmpty().isLength({min:5}).isAlphanumeric()
+    body("email","please type a correct email").isEmail().isEmpty(),
+    body("password","password can not be empty and have to contain at least five character").isEmpty().isLength({min:5})
 ]
 
 exports.isValid= async(req,resp,next) => {
+    
     try {
-       const errors = validationResult(req.body)
+       const errors = await validationResult(req.body)
        if(!errors.isEmpty())
        {
            return resp.status(400).json({errors:errors.array() })};   

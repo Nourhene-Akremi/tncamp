@@ -1,11 +1,11 @@
-import './App.css';
+import './style/App.css';
 import {Switch,Route} from 'react-router-dom'
 import Home from './commponents/home'
 import MyNavBar from './commponents/navbar'
 import Profile from './commponents/profile'
-import Events from './commponents/events'
 import Login from './commponents/logIn'
 import Signup from './commponents/signup'
+import Footer from './commponents/footer'
 function App() {
   return (
     <div className="App">
@@ -16,8 +16,8 @@ function App() {
        <Route path="/Login" component={Login}/>
        <Route path="/Signup" component={Signup}/>
        <Route path="/Profile" component={Profile}/>
-       <Route path="/Events" component={Events}/>
      </Switch>
+     <Footer/>
     </div>
   );
 }

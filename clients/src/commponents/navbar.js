@@ -1,38 +1,42 @@
 import React from 'react'
 import mylogo from '../logo.png'
-import {Link} from 'react-router-dom'
-function myNavBar() {
+import {Link,useHistory} from "react-router-dom"
+import {Navbar,Container,Nav} from 'react-bootstrap'
+
+function MyNavBar() {
+  const history = useHistory()
+  const currentUser=JSON.parse(localStorage.getItem('current_user'))
+  const clearRefresh=()=>{
+    localStorage.clear()
+    history.push("/")
+    setTimeout(() => {
+      window.location.reload()
+    }, 800);
+  }
   return (
-    <div>
-       <img src={mylogo} alt="tunisie camping logo"/>
-       <Link to='/'>
-        <div className="group_home">
-        <div className="icons_home"></div>
-        <div className="Home">Home</div>
-        </div>
-        </Link>
-
-       <Link to='/Events'>
-        <div className="group_Events">
-        <div className="icons_Events"></div>
-        <div className="Events">Events</div>
-        </div>
-        </Link>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Container>
+  <Navbar.Brand ><img src={mylogo} alt="" /></Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="me-auto">
+      <Nav.Link as={Link} to ='/'>Home</Nav.Link>
+      <Nav.Link as={Link} to ="/Profile">Profile</Nav.Link>
      
-      < Link to='/Login'> <div className="group_Login">
-        <div className="icons_Login"></div>
-        <div className="Login">Login</div>
-        </div>
-      </Link>
+     { currentUser ?
+     <Nav.Link as={Link} to ="/" onClick={clearRefresh}>Logout</Nav.Link>
+    :
+    <Nav.Link as={Link} to ="/Login">Log In</Nav.Link> 
+    }
      
-      <Link to='/Profile'> <div className="group_Profile">
-        <div className="icons_Profile"></div>
-        <div className="Profile">Profile</div>
-        </div>
-      </Link>  
+     
 
-    </div>
+    </Nav>
+  
+  </Navbar.Collapse>
+  </Container>
+</Navbar>
   )
 }
 
-export default myNavBar
+export default MyNavBar

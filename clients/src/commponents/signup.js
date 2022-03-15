@@ -1,8 +1,10 @@
 import React from 'react'
 import {useState} from 'react'
- 
+ import {useDispatch} from 'react-redux'
+ import {signUp} from '../redux/action/actions'
 function Signup() {
     
+  const dispatch =useDispatch();
     const [photo, setPhoto]=useState('')
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
@@ -10,9 +12,12 @@ function Signup() {
     const [phone_number,setphone_Number]=useState('')
     const [adress,setAdress]=useState('')
     
+    const sendsignUp = () =>{
+      dispatch(signUp({photo, name, email, password, phone_number,adress}))
+    }
     
   return (
-    <div>
+  
     <form method="post">
        <div className="photo">
        <input type="text" name="photo" id=""  onChange={(e)=>setPhoto(e.target.value)}/>
@@ -41,9 +46,13 @@ function Signup() {
        <label> Adress</label>
        <input type="adress" name="adress" id="" onChange={(e)=>setAdress(e.target.value)}/>
        </div>
-       <button type="submit"></button></form>
-    </div>
+       
+       <input className='btn' onClick={sendsignUp}  defaultValue='Sign Up' />
+       </form>
+    
   )
 }
+
+
 
 export default Signup
