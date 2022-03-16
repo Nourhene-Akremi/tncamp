@@ -1,11 +1,18 @@
 import React from 'react'
 import MainAdmin from '../AdminComponent/mainAdmin'
-
+import {useHistory} from 'react-router-dom'
 function Profile() { 
+    const history = useHistory()
   const currentUser = JSON.parse(localStorage.getItem('current_user'))
+  if(!currentUser) {
+      setTimeout(() => {
+        window.location.reload()
+      history.push('/')
+      }, 500);
+  }
   return (
   <div>
-           {currentUser.role = "guest" ?
+           {currentUser?.role == "guest" ?
       
         <section className="section about-section gray-bg" id="about">
             <div className="container">

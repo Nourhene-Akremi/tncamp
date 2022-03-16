@@ -1,4 +1,4 @@
-const eventsSchema = require('../models/userModels')
+const eventsSchema = require('../models/eventsModel')
 exports.eventsController=async(req,resp)=>{
     const{photo,eventName,startDate,endDate,description,plant,charges}=req.body
     try {
@@ -15,7 +15,7 @@ exports.eventsController=async(req,resp)=>{
         resp.status(500).send({message:'failed to add events'})
     }
 }
-exports.getEventsController=async(req,resp)=>{
+exports.getEventsController=async(req,resp)=>{ 
     const{photo,eventName,startDate,endDate,description,plant,charges}=req.body
     try {
         const find = await eventsSchema.find()

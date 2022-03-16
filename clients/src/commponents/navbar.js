@@ -21,8 +21,9 @@ function MyNavBar() {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
       <Nav.Link as={Link} to ='/'>Home</Nav.Link>
+      { currentUser ?
       <Nav.Link as={Link} to ="/Profile">Profile</Nav.Link>
-     
+      : '' }
      { currentUser ?
      <Nav.Link as={Link} to ="/" onClick={clearRefresh}>Logout</Nav.Link>
     :

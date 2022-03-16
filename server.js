@@ -8,11 +8,38 @@ const connectDb = require('./config/connectDb');
 const cors=require('cors');
 const app = express();
 const authRouter=require('./routes/auth');
+const userSchema = require('./models/userModels')
+const bcrypt = require('bcrypt');
 //to import the .env file we need to import the dotenv node.module(node_modules/dotenv/lib/main)and we need the config() to Loads the .env file contents into process.env. 
 require('dotenv').config()
 app.use(express.json())
 app.use(cors())
 connectDb()
+init()
+async function init (){
+    try {
+        const isAdmin = await userSchema.findOne({role:'admin'})
+
+    if(!isAdmin){
+        const admin = new userSchema({
+            name:'admin',
+            email:'admin@admin.com',
+            password:bcrypt.hashSync(process.env.PASSWORD_ADMIN,10),
+            phone_number:123456789,
+            adress:'azerty',
+            role:'admin'
+        })
+         
+       await admin.save();
+       console.log(`admin ${admin._id} is created`)
+    }
+    } catch (error) {
+     console.log(error)   
+    }
+    
+    
+}
+
 port=process.env.port||5000
 //app.use() used to use a module
  
