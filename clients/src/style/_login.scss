@@ -1,15 +1,15 @@
-.loginFORM {
+.formlogin {
    border: .3rem inset green;
-   width:24rem;
-   height:15rem ;
-   margin-top:3rem;
-   margin-left:3rem;
-   margin-right: 2rem;
+   width:24em;
+   height:15em ;
+   // margin-top:3rem;
+   // margin-left:3rem;
+   // margin-right: 2rem;
    border-radius:3rem;
-margin-top:3rem;
-margin-bottom:3rem;
-background-image:url(https://www.pinterest.com/pin/705376360386848864/)}
-   .login{
+   margin:3rem auto;
+   
+}
+.login{
        display:flex;
        flex-direction: column;
        margin-top:1rem;

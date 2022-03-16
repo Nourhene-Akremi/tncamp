@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
  import {useDispatch} from 'react-redux'
  import {signUp} from '../redux/action/actions'
+ import {Form} from 'react-bootstrap'
 function Signup() {
     
   const dispatch =useDispatch();
@@ -17,39 +18,35 @@ function Signup() {
     }
     
   return (
+<Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Name </Form.Label>
+    <Form.Control type="text" placeholder="Enter Name" onChange={(e)=>setName(e.target.value)} /> 
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Phone_number </Form.Label>
+    <Form.Control type="text" placeholder="Enter Phone_number" onChange={(e)=>setphone_Number(e.target.value)} /> 
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Adress </Form.Label>
+    <Form.Control type="text" placeholder="Enter Adress" onChange={(e)=>setAdress(e.target.value)} /> 
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email </Form.Label>
+    <Form.Control type="email" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} /> 
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password"  onChange={(e)=>setPassword(e.target.value)}/>
+  </Form.Group>
+  <input className='btn' onClick={sendsignUp}  defaultValue='Sign Up' />
   
-    <form method="post">
-       <div className="photo">
-       <input type="text" name="photo" id=""  onChange={(e)=>setPhoto(e.target.value)}/>
-       </div>
+  
+</Form>
 
-       <div className="name">
-       <label> Name:</label>
-       <input type="text" name="name" id="" onChange={(e)=>setName(e.target.value)}/>
-       </div>
 
-       <div className="email">
-       <label>Email </label>
-       <input type="email" name="email" id="" onChange={(e)=>setEmail(e.target.value)}/>
-        </div>
 
-        <div className="password">      
-       <label> Password</label>
-       <input type="password" name="password" id="" onChange={(e)=>setPassword(e.target.value)}/>
-        </div>
-        
-        <div className="phone_number">
-       <label>Phone_number: </label>
-       <input type="text" name="phone_number" id="" onChange={(e)=>setphone_Number(e.target.value)} /></div>
-
-       <div className="adress">
-       <label> Adress</label>
-       <input type="adress" name="adress" id="" onChange={(e)=>setAdress(e.target.value)}/>
-       </div>
-       
-       <input className='btn' onClick={sendsignUp}  defaultValue='Sign Up' />
-       </form>
-    
   )
 }
 

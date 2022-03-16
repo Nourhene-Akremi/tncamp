@@ -9,13 +9,13 @@ function Footer() {
   return (
     <div className="myfooter-background">
     <div className="myfooter">
+      
         <div className="icons-social-media">
-          <span className='BsFacebook'>
-            <BsFacebook/></span>
-          <span><FaTwitter size={30}/></span>
+          <span><BsFacebook/></span>
+          <span><FaTwitter/></span>
           <span><FaTelegram/></span>
-          
         </div>
+
           <div className="contact">
             <span className='contact-text'> CONTACT:</span>
                <div className="adress">

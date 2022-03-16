@@ -39,7 +39,7 @@ function Profile() {
                     </div>
                     <div className="col-lg-6">
                         <div className="about-avatar">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt=""/>
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""/>
                         </div>
                     </div>
                 </div>

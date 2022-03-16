@@ -1,25 +1,23 @@
-.loginFORM{
-    border: .3rem inset green;
-    width:24rem;
-    height:15rem ;
-    margin-top:3rem;
-    margin-left:3rem;
-    margin-right: 2rem;
+Form{
+    flex-direction:column;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:inset green;
+    margin:2rem 3rem;
+    width:18rem;
     border-radius:3rem;
-    margin-top:3rem;
-    margin-bottom:3rem;
-    background-image:url(https://www.pinterest.com/pin/705376360386848864/)}
-    .login{
-        display:flex;
-        flex-direction: column;
-        margin-top:1rem;
-        margin-left: 3rem;
-        .email ,.password{
-            display:flex;
-            flex-direction:column;
-         }
-        input{
-         margin-top:1rem;
-         border-radius:3rem;
-         width:15rem
-        }}
+    background-image: url("../image/firecamp.jpg");
+   background-size: cover;
+    background-position: center;
+    
+    .mb-3{
+        margin-top:.3rem;     
+    }
+    .btn{
+        color:rgb(241, 234, 234);
+        font-size: 1rem;
+        padding:1rem;
+    }
+}

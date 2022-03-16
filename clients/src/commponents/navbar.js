@@ -29,8 +29,6 @@ function MyNavBar() {
     <Nav.Link as={Link} to ="/Login">Log In</Nav.Link> 
     }
      
-     
-
     </Nav>
   
   </Navbar.Collapse>
