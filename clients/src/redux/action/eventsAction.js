@@ -13,9 +13,9 @@ export const  eventsAdd =(data)=>async(dispatch)=>{
         console.log(error)
     }
 }
-export const  getEvents =(data)=>async(dispatch)=>{
+export const  getEvents =()=>async(dispatch)=>{
     try {
-        const event =await axios.get('http://localhost:7000/getevents',data)
+        const event =await axios.get('http://localhost:7000/getevents')
         dispatch({
           type:GETEVENT,
           payload:event.data

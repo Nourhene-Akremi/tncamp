@@ -16,7 +16,7 @@ function MyNavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand ><img src={mylogo} alt="" /></Navbar.Brand>
+  <Navbar.Brand ><Nav.Link as={Link} to ='/'><img src={mylogo} alt="logo" /></Nav.Link></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">

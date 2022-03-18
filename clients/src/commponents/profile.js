@@ -36,7 +36,7 @@ function Profile() {
                                     </div>
                                     <div className="media">
                                         <label>Address</label>
-                                        adress
+                                        
                                          <p>{currentUser?.adress}</p>
                                     </div>
                                 </div>

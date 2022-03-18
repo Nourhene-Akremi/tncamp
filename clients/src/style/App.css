@@ -42,12 +42,18 @@
   margin-bottom: .5rem;
 }
 
-.formlogin {
+.loginForm {
   border: .3rem inset green;
   width: 24em;
-  height: 15em;
+  height: 25em;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 2rem;
   border-radius: 3rem;
   margin: 3rem auto;
+  background-image: url("../image/fireclose.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .login {
