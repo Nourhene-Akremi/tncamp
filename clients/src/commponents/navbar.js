@@ -16,18 +16,26 @@ function MyNavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand ><Nav.Link as={Link} to ='/'><img src={mylogo} alt="logo" /></Nav.Link></Navbar.Brand>
+     
+         <Navbar.Brand  ><Nav.Link as={Link} to ='/' >
+             
+             <img className='navbar_logo_image' src={mylogo} alt="logo" />
+             
+         </Nav.Link></Navbar.Brand>
+  
+
+
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link as={Link} to ='/'>Home</Nav.Link>
+      <Nav.Link as={Link} to ='/' className="nav_transform">Home</Nav.Link>
       { currentUser ?
-      <Nav.Link as={Link} to ="/Profile">Profile</Nav.Link>
+      <Nav.Link as={Link} to ="/Profile" className="nav_transform">Profile</Nav.Link>
       : '' }
      { currentUser ?
-     <Nav.Link as={Link} to ="/" onClick={clearRefresh}>Logout</Nav.Link>
+     <Nav.Link as={Link} to ="/" className="nav_transform" onClick={clearRefresh}>Logout</Nav.Link>
     :
-    <Nav.Link as={Link} to ="/Login">Log In</Nav.Link> 
+    <Nav.Link as={Link} to ="/Login" className="nav_transform">Log In</Nav.Link> 
     }
      
     </Nav>
