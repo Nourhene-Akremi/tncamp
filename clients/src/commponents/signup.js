@@ -18,7 +18,7 @@ function Signup() {
     }
     
   return (
-<Form>
+<Form className='signup_form'>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Name </Form.Label>
     <Form.Control type="text" placeholder="Enter Name" onChange={(e)=>setName(e.target.value)} /> 
@@ -40,7 +40,7 @@ function Signup() {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password"  onChange={(e)=>setPassword(e.target.value)}/>
   </Form.Group>
-  <input className='btn' onClick={sendsignUp}  defaultValue='Sign Up' />
+  <input className='btn_signup' onClick={sendsignUp}  defaultValue='Sign Up' />
   
   
 </Form>

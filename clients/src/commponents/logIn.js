@@ -19,30 +19,32 @@ function LogIn() {
 
 
   return (
+    <div className="back">
    <div className="loginFORM">
       <form method="post" name='loginForm'>
 
-      <div className="login">
+      <div className="login-box">
 
-       <div className="email">
+       <div className="login">
           <label>Email </label>
           <input type="email" name="email" id="" onChange={(e)=>setEmail(e.target.value)}/>
        </div>
 
-      <div className="password">      
+      <div className="login">      
           <label>Password </label>
           <input type="password" name="password" id="" onChange={(e)=>setPassword(e.target.value)}/>
       </div>
 
       </div>
 
-      <div className="btn">
-       <input className='btn' onClick={sendSignIn}  defaultValue='SignIn'/>  
+      <div className="btn-group-login">
+       <input className='btn-login' onClick={sendSignIn}  defaultValue='SignIn'/>  
      
-       <Link to="/signup">Signup</Link>
+       <Link to="/signup" className='Signup'>Signup</Link>
        </div>
 
         </form>
+        </div>
         </div>
         
   )
